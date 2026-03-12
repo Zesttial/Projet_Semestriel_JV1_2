@@ -1,3 +1,4 @@
+using System.Security.Cryptography;
 using UnityEngine;
 using UnityEngine.Splines;
 
@@ -6,11 +7,12 @@ public class ennemy1 : MonoBehaviour
 
     public SpriteRenderer mySpriteRenderer;
     public SplineAnimate mySplineAnimate;
-    public HpManager myHpManager;
+    public HealthManager myHpManager;
     public int HpMax;
+    private int hp;
     void Start()
     {
-        myHpManager.maxHP = HpMax;
+        ChangeHP(hpMax);
         mySplineAnimate.Container = FindFirstObjectByType<SplineContainer>();
         mySplineAnimate.Play();
     }

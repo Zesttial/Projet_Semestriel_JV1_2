@@ -506,7 +506,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::sword
   dammage: 1
-  spriteRenderer: {fileID: 587088191}
+  playerSpriteRenderer: {fileID: 0}
+  Rb: {fileID: 0}
 --- !u!61 &587088193
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -870,6 +871,37 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 45a0810ebc5484c43bdddf50c88777fc, type: 3}
+--- !u!1 &1066687704
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1066687705}
+  m_Layer: 0
+  m_Name: Chekpoint
+  m_TagString: Untagged
+  m_Icon: {fileID: 1206586993520771344, guid: 0000000000000000d000000000000000, type: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1066687705
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1066687704}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -12.76, y: -8.65, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1888167735
 GameObject:
   m_ObjectHideFlags: 0
@@ -1439,7 +1471,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 7482667652216324306, guid: 75f5f34dc1b5347e0b8351032682f224, type: 3}
+  m_Sprite: {fileID: 7482667652216324306, guid: 09b1e658453686d4db27e7cc46498d45, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -1484,6 +1516,9 @@ MonoBehaviour:
   mask:
     serializedVersion: 2
     m_Bits: 8
+  myAnimator: {fileID: 0}
+  mySpriteRenderer: {fileID: 0}
+  isGrounded: 0
 --- !u!114 &2061963284
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1573,3 +1608,4 @@ SceneRoots:
   - {fileID: 1952875294}
   - {fileID: 1888167740}
   - {fileID: 16785006}
+  - {fileID: 1066687705}

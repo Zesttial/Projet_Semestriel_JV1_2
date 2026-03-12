@@ -6,6 +6,10 @@ public class move_perso1 : MonoBehaviour
     public float speed = 1;
     public float jumpforce = 1;
     public LayerMask mask;
+    public Animator myAnimator;
+    public SpriteRenderer mySpriteRenderer;
+    public bool isGrounded;
+
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -17,6 +21,7 @@ public class move_perso1 : MonoBehaviour
     {
         var hDirection = 0f;
         var vDirection = 0f;
+        isGrounded = CheckGround();
         if(CheckGround())
         {
             if (Input.GetKeyDown (KeyCode.UpArrow))
@@ -44,6 +49,12 @@ public class move_perso1 : MonoBehaviour
 
 
         Rb.linearVelocity = new Vector2(hDirection * speed, Rb.linearVelocityY + vDirection);
+       
+        //myAnimator.SetFloat("YVelocity", Rb.linearVelocityY);
+        //myAnimator.SetFloat("XVelocity", Mathf.Abs(Rb.linearVelocityX));
+        //myAnimator.SetBool("isGround", isGrounded);
+        
+        transform.localScale = new Vector3(Mathf.Sign(Rb.linearVelocityX),1,1);
     }
 
     public bool CheckGround()

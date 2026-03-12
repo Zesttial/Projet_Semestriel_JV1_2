@@ -3,7 +3,10 @@ using UnityEngine;
 public class sword : MonoBehaviour
 {
     public int dammage;
-    public SpriteRenderer spriteRenderer;
+    public SpriteRenderer playerSpriteRenderer;
+    public Rigidbody2D Rb;
+ 
+
     
 
     private void OnTriggerEnter2D(Collider2D collision)
@@ -12,14 +15,8 @@ public class sword : MonoBehaviour
 
         if (collisionEnemyComponent != null)
         {
-            collisionEnemyComponent.myHpManager.RemoveHp(dammage);
+            collisionEnemyComponent.myHpManager.Dammage(dammage,DammageType.Sword);
         }
     }
-    void Update()
-    {
-        if (hDirection == -1)
-        {
-
-        }
-    }
+    
 }
