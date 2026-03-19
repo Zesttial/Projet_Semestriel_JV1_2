@@ -1,4 +1,5 @@
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class HealthManager : MonoBehaviour
@@ -11,6 +12,9 @@ public class HealthManager : MonoBehaviour
     private List<DammageType> immunities;
 
     private List<HpModifier> hpModifiers;
+    
+
+
 
     public void AddModifier(HpModifier modifier)
     {
@@ -30,8 +34,6 @@ public class HealthManager : MonoBehaviour
         {
             modifier.OnHpChanged(newAmount);
         }
-
-
 
         if (hp <= 0)
         {
@@ -73,6 +75,10 @@ public class HealthManager : MonoBehaviour
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
+        if (hpModifiers == null)
+        {
+            hpModifiers = new List<HpModifier>();
+        }
         ChangeHP(hpMax);
 
     }

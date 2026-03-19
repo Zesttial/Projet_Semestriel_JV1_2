@@ -50,9 +50,6 @@ public class move_perso1 : MonoBehaviour
 
         Rb.linearVelocity = new Vector2(hDirection * speed, Rb.linearVelocityY + vDirection);
        
-        //myAnimator.SetFloat("YVelocity", Rb.linearVelocityY);
-        //myAnimator.SetFloat("XVelocity", Mathf.Abs(Rb.linearVelocityX));
-        //myAnimator.SetBool("isGround", isGrounded);
         
         transform.localScale = new Vector3(Mathf.Sign(Rb.linearVelocityX),1,1);
     }

@@ -8,11 +8,10 @@ public class ennemy1 : MonoBehaviour
     public SpriteRenderer mySpriteRenderer;
     public SplineAnimate mySplineAnimate;
     public HealthManager myHpManager;
-    public int HpMax;
-    private int hp;
+    public int hpMax;
     void Start()
     {
-        ChangeHP(hpMax);
+        myHpManager.ChangeHP(hpMax);
         mySplineAnimate.Container = FindFirstObjectByType<SplineContainer>();
         mySplineAnimate.Play();
     }
@@ -20,6 +19,6 @@ public class ennemy1 : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+
     }
 }

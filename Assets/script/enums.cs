@@ -2,6 +2,6 @@ public enum DammageType
 {
     Spike,
     Fire,
-    Bullet,
+    Arrow,
     Sword,
 }

@@ -10,7 +10,7 @@ public class sword : MonoBehaviour
     
 
     private void OnTriggerEnter2D(Collider2D collision)
-    {
+    { 
         ennemy1 collisionEnemyComponent = collision.gameObject.GetComponent<ennemy1>();
 
         if (collisionEnemyComponent != null)
