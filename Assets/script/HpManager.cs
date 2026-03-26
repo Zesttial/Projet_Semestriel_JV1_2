@@ -4,17 +4,20 @@ using UnityEngine;
 
 public class HealthManager : MonoBehaviour
 {
+    [SerializeField]
     private int hp;
     [SerializeField]
     private int hpMax;
-    public Transform checkPoint;
     [SerializeField]
     private List<DammageType> immunities;
 
     private List<HpModifier> hpModifiers;
     
 
-
+    public int MaxHp()
+    {
+        return hpMax;
+    }
 
     public void AddModifier(HpModifier modifier)
     {
@@ -72,7 +75,6 @@ public class HealthManager : MonoBehaviour
 
     }
 
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
         if (hpModifiers == null)
@@ -80,6 +82,7 @@ public class HealthManager : MonoBehaviour
             hpModifiers = new List<HpModifier>();
         }
         ChangeHP(hpMax);
+
 
     }
 

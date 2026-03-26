@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class move_perso1 : MonoBehaviour
+public class est_attack : MonoBehaviour
 {
     public Rigidbody2D Rb;
     public float speed = 1;
