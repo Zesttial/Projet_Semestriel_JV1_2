@@ -26,6 +26,7 @@ public class est_attack : MonoBehaviour
         {
             if (Input.GetKeyDown (KeyCode.UpArrow))
             {
+                print ("coucou");
                 vDirection += jumpforce;
             }
 
