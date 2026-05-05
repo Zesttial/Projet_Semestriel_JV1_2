@@ -26,7 +26,6 @@ public class est_attack : MonoBehaviour
         {
             if (Input.GetKeyDown (KeyCode.UpArrow))
             {
-                print ("coucou");
                 vDirection += jumpforce;
             }
 
@@ -57,7 +56,7 @@ public class est_attack : MonoBehaviour
 
     public bool CheckGround()
     {
-        var rayCastHit = Physics2D.Raycast(transform.position, new Vector2(0, -1), 1.1f,mask);
+        var rayCastHit = Physics2D.Raycast(transform.position, new Vector2(0, -1), 1.3f,mask);
         if (rayCastHit)
         {
             return true;
@@ -82,7 +81,11 @@ public class est_attack : MonoBehaviour
         }
         return false;
     }
-
+    private void OnDrawGizmos()
+    {
+        Gizmos.color = Color.purple;
+        Gizmos.DrawRay(transform.position, Vector3.down*1.3f);
+    }
 
 
 
