@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class est_attack : MonoBehaviour
+public class Move_perso : MonoBehaviour
 {
     public Rigidbody2D Rb;
     public float speed = 1;
@@ -28,8 +28,6 @@ public class est_attack : MonoBehaviour
             {
                 vDirection += jumpforce;
             }
-
-
         }
         if (CheckLeftWall() == false)
         {
@@ -47,8 +45,16 @@ public class est_attack : MonoBehaviour
             }
         }
 
+        if (Input != 0)
+        {
+            myAnimator.SetBool("isRunning", true);
+        }
+        else
+        {
+            myAnimator.SetBool("isRunning", false);
+        }
 
-        Rb.linearVelocity = new Vector2(hDirection * speed, Rb.linearVelocityY + vDirection);
+            Rb.linearVelocity = new Vector2(hDirection * speed, Rb.linearVelocityY + vDirection);
        
         
         transform.localScale = new Vector3(Mathf.Sign(Rb.linearVelocityX),1,1);
