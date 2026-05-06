@@ -45,13 +45,13 @@ public class Move_perso : MonoBehaviour
             }
         }
 
-        if (Input != 0)
+        if ((Input.GetKey(KeyCode.LeftArrow) | Input.GetKey(KeyCode.RightArrow)))
         {
-            myAnimator.SetBool("isRunning", true);
+            myAnimator.SetBool("IsRunning", true);
         }
         else
         {
-            myAnimator.SetBool("isRunning", false);
+            myAnimator.SetBool("IsRunning", false);
         }
 
             Rb.linearVelocity = new Vector2(hDirection * speed, Rb.linearVelocityY + vDirection);

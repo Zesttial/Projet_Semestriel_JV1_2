@@ -3079,10 +3079,9 @@ MonoBehaviour:
   mask:
     serializedVersion: 2
     m_Bits: 8
-  myAnimator: {fileID: 0}
+  myAnimator: {fileID: 2119604593}
   mySpriteRenderer: {fileID: 0}
   isGrounded: 0
-  PlayerAnimator: {fileID: 0}
 --- !u!50 &2119604600
 Rigidbody2D:
   serializedVersion: 5
