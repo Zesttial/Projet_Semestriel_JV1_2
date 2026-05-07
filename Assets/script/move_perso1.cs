@@ -71,7 +71,7 @@ public class Move_perso : MonoBehaviour
     }
     public bool CheckRightWall()
     {
-        var rayCastHit = Physics2D.Raycast(transform.position, new Vector2(1, 0), 0.6f, mask);
+        var rayCastHit = Physics2D.Raycast(transform.position, new Vector2(1, 0), 3f, mask);
         if (rayCastHit)
         {
             return true;
@@ -80,7 +80,7 @@ public class Move_perso : MonoBehaviour
     }
     public bool CheckLeftWall()
     {
-        var rayCastHit = Physics2D.Raycast(transform.position, new Vector2(-1, 0), 0.6f, mask);
+        var rayCastHit = Physics2D.Raycast(transform.position, new Vector2(-1, 0), 3f, mask);
         if (rayCastHit)
         {
             return true;
@@ -91,6 +91,9 @@ public class Move_perso : MonoBehaviour
     {
         Gizmos.color = Color.purple;
         Gizmos.DrawRay(transform.position, Vector3.down*1.3f);
+
+        Gizmos.color = Color.purple;
+        Gizmos.DrawRay(transform.position, Vector3.right*3f);
     }
 
 

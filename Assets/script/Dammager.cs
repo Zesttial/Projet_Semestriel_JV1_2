@@ -6,9 +6,9 @@ public class Dammager : MonoBehaviour
 {
     public int dammage;
     public DammageType type;
-    private void OnTriggerEnter2D(Collider2D collision)
+    private void OnTriggerEnter2D(Collider2D triger)
     {
-        HealthManager otherHp = collision.gameObject.GetComponent<HealthManager>();
+        HealthManager otherHp = triger.gameObject.GetComponent<HealthManager>();
 
         if (otherHp != null)
         {

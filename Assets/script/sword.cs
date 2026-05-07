@@ -8,13 +8,13 @@ public class sword : MonoBehaviour
     public Rigidbody2D Rb;
     
 
-    private void OnTriggerEnter2D(Collider2D collision)
+    private void OnTriggerEnter2D(Collider2D triger)
         {
-            ennemy1 collisionEnemyComponent = collision.gameObject.GetComponent<ennemy1>();
+            ennemy1 trigerEnemyComponent = triger.gameObject.GetComponent<ennemy1>();
 
-            if (collisionEnemyComponent != null)
+            if (trigerEnemyComponent != null)
             {
-                collisionEnemyComponent.myHpManager.Dammage(dammage, DammageType.Sword);
+                trigerEnemyComponent.myHpManager.Dammage(dammage, DammageType.Sword);
             }
         }
 }

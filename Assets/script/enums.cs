@@ -4,4 +4,5 @@ public enum DammageType
     Fire,
     Arrow,
     Sword,
+    Lava,
 }
