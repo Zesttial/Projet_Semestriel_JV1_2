@@ -10,8 +10,8 @@ GameObject:
   m_Component:
   - component: {fileID: 9096195416828197068}
   - component: {fileID: 6161861170125813309}
-  - component: {fileID: 5138616807654201916}
   - component: {fileID: 2231612697512228048}
+  - component: {fileID: -1683901660132443234}
   m_Layer: 0
   m_Name: Spike_Trap
   m_TagString: Untagged
@@ -92,20 +92,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &5138616807654201916
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2515422172002548082}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fee420eb514b49244b968b73a4eb96b9, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::Spike_Trap
-  dammage: 5
-  type: 0
 --- !u!60 &2231612697512228048
 PolygonCollider2D:
   m_ObjectHideFlags: 0
@@ -156,3 +142,17 @@ PolygonCollider2D:
       - {x: -0.43902588, y: -0.584341}
       - {x: 0.44036865, y: -0.5763468}
   m_UseDelaunayMesh: 0
+--- !u!114 &-1683901660132443234
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2515422172002548082}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6f42b0290be4b4343a62142e35432bcf, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::TrapDammager
+  dammage: 5
+  type: 0
