@@ -1,47 +1,59 @@
+using System.Runtime.CompilerServices;
 using UnityEngine;
+using UnityEngine.InputSystem.iOS;
 
 public class Move_perso : MonoBehaviour
 {
     public Rigidbody2D Rb;
-    public float speed = 1;
-    public float jumpforce = 1;
-    public LayerMask mask;
+    public float speed = 1f;
+    public float jumpforce = 1f;
+    public LayerMask Groundmask;
+    public LayerMask Wallmask;
     public Animator myAnimator;
-    public SpriteRenderer mySpriteRenderer;
     public bool isGrounded;
+    public bool isWall;
 
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        
+        Rb = GetComponent<Rigidbody2D>();
+        myAnimator = GetComponent<Animator>();
     }
-
-    // Update is called once per frame
     void Update()
     {
         var hDirection = 0f;
         var vDirection = 0f;
         isGrounded = CheckGround();
-        if(CheckGround())
+        isWall = CheckLeftWall() || CheckRightWall();
+
+        myAnimator.SetFloat("VSpeed", Rb.linearVelocity.y);
+        myAnimator.SetBool("isGrounded", isGrounded);
+
+
+        if (isGrounded == true)
         {
-            if (Input.GetKeyDown (KeyCode.UpArrow))
+            if (Input.GetKeyDown(KeyCode.UpArrow))
             {
                 vDirection += jumpforce;
+                myAnimator.SetTrigger("JumpTrigger");
             }
         }
         if (CheckLeftWall() == false)
         {
+
             if (Input.GetKey(KeyCode.LeftArrow))
             {
                 hDirection += -1;
+                transform.localScale = new Vector3(-1, 1, 1);
             }
         }
+
         if (CheckRightWall() == false)
         {
-            
+
             if (Input.GetKey(KeyCode.RightArrow))
             {
                 hDirection += 1;
+                transform.localScale = new Vector3(1, 1, 1);
             }
         }
 
@@ -54,24 +66,52 @@ public class Move_perso : MonoBehaviour
             myAnimator.SetBool("IsRunning", false);
         }
 
-            Rb.linearVelocity = new Vector2(hDirection * speed, Rb.linearVelocityY + vDirection);
-       
-        
-        transform.localScale = new Vector3(Mathf.Sign(Rb.linearVelocityX),1,1);
+
+        Rb.linearVelocity = new Vector2(hDirection * speed, Rb.linearVelocityY + vDirection);
+
     }
+
+  //  private bool CheckGround()
+  //  {
+  //      if (isGrounded == true)
+  //      {
+  //          return true;
+  //      }      
+  //      return false;    
+  //  }
+
+ //   private void OnTriggerEnter2D(Collider2D triger)
+ //       {
+ //           if (triger.gameObject.CompareTag("Ground"))
+ //           {
+ //               isGrounded = true;
+ //           }
+ //       }
+  //  private void OnTriggerExit2D(Collider2D triger)
+    //    {
+    //        if(triger.gameObject.CompareTag("ground"))
+   //        {
+    //            isGrounded = false;
+   //         }
+   //     }
+
+
+
+   
 
     public bool CheckGround()
     {
-        var rayCastHit = Physics2D.Raycast(transform.position, new Vector2(0, -1), 1.3f,mask);
+       var rayCastHit = Physics2D.Raycast(transform.position, new Vector2(0, -1), 1.5f,Groundmask);
         if (rayCastHit)
         {
-            return true;
+            return true;       
         }
-        return false;
-    }
+         return false;
+
+     }
     public bool CheckRightWall()
     {
-        var rayCastHit = Physics2D.Raycast(transform.position, new Vector2(1, 0), 3f, mask);
+        var rayCastHit = Physics2D.Raycast(transform.position, new Vector2(1, 0), 1.3f, Wallmask);
         if (rayCastHit)
         {
             return true;
@@ -80,22 +120,12 @@ public class Move_perso : MonoBehaviour
     }
     public bool CheckLeftWall()
     {
-        var rayCastHit = Physics2D.Raycast(transform.position, new Vector2(-1, 0), 3f, mask);
+        var rayCastHit = Physics2D.Raycast(transform.position, new Vector2(-1, 0), 3f, Wallmask);
         if (rayCastHit)
-        {
+        { 
             return true;
         }
         return false;
+
     }
-    private void OnDrawGizmos()
-    {
-        Gizmos.color = Color.purple;
-        Gizmos.DrawRay(transform.position, Vector3.down*1.3f);
-
-        Gizmos.color = Color.purple;
-        Gizmos.DrawRay(transform.position, Vector3.right*3f);
-    }
-
-
-
 }
