@@ -23,7 +23,7 @@ public class move_test : MonoBehaviour
         float moveInput = Input.GetAxis("Horizontal");
         Rb.linearVelocity = new Vector2(moveInput* Vspeed, Rb.linearVelocity.y);
 
-            if(Input.GetKeyDown(KeyCode.UpArrow) || Input.GetKey(KeyCode.Space) && isGrounded ==true)
+            if(Input.GetKeyDown(KeyCode.UpArrow) && isGrounded == true || Input.GetKey(KeyCode.Space) && isGrounded ==true)
             {
                 Rb.linearVelocity = new Vector2(Rb.linearVelocity.x, jumpforce);
 

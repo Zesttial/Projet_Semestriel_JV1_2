@@ -37,7 +37,7 @@ public class ennemy1 : MonoBehaviour
     void Awake()
     {
         intTimer = timer;
-        anim = GetComponent<Animator>();
+        //anim = GetComponent<Animator>();
     }
     void Update()
     {
@@ -59,7 +59,7 @@ public class ennemy1 : MonoBehaviour
 
         if (inRange == false)
         {
-            anim.SetBool("canWalk", false);
+            //anim.SetBool("canWalk", false);
             StopAttack();
         }
 
@@ -90,13 +90,13 @@ public class ennemy1 : MonoBehaviour
 
         if (cooling)
         {
-            anim.SetBool("Attack", false);
+            //anim.SetBool("Attack", false);
         }
 
     }
     void Move()
         {
-            anim.SetBool("canWalk",true);
+            //anim.SetBool("canWalk",true);
             if(! anim.GetCurrentAnimatorStateInfo(0).IsName("Skel_attack"))
             {
                 Vector2 targetPosition = new Vector2(target.transform.position.x, transform.position.y);
@@ -109,14 +109,14 @@ public class ennemy1 : MonoBehaviour
             timer = intTimer;
             attackMode = true;
 
-            anim.SetBool("canWalk", false );
-            anim.SetBool("Attack", true);
+            //anim.SetBool("canWalk", false );
+            //anim.SetBool("Attack", true);
     }
     void StopAttack()
         {
             cooling = false;
             attackMode = false;
-            anim.SetBool("Attack", false);
+            //anim.SetBool("Attack", false);
     }
         
         

@@ -8,7 +8,7 @@ public class detection_range : MonoBehaviour
     public GameObject player;
     public GameObject range;
     public float speed;
-    private void OnTriggerEnter2D(Rigidbody2D other)
+    private void OnTrigerEnter2D(Rigidbody2D other)
     {
         if(other.tag == "Player")
         {
