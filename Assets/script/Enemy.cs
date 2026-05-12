@@ -3,7 +3,7 @@ using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.Splines;
 
-public class ennemy1 : MonoBehaviour
+public class ennemy : MonoBehaviour
 {
 
     public SpriteRenderer mySpriteRenderer;

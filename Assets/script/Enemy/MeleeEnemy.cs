@@ -5,12 +5,14 @@ public class MeleeEnemy : MonoBehaviour
 {
     [Header ("Attack Parameters")]
     [SerializeField] private float attackCooldown;
-    [SerializeField] private float range;
-    [SerializeField] private float colliderDistance;
-    [SerializeField] private int damage;
 
     [Header("Collider Parameters")]
-    [SerializeField] private BoxCollider2D boxCollider;
+    [SerializeField] private Collider2D boxCollider;
+
+    [Header("Paramètre de détection")]
+    public Vector2 boxSize = new Vector2(1f, 1f);
+    public float castDistance = 2f;
+    private RaycastHit2D hit;
 
     [Header("Player Layer")]
     [SerializeField] private LayerMask playerLayer;
@@ -18,9 +20,8 @@ public class MeleeEnemy : MonoBehaviour
     private float cooldownTimer = Mathf.Infinity;
 
     private Animator anim;
+    //private HealthManager healthManager;
 
-    public HealthManager myHpManager;
-    public int hpMax;
 
     private EnemyPatrol enemyPatrol;
 
@@ -28,13 +29,10 @@ public class MeleeEnemy : MonoBehaviour
     {
         anim = GetComponent<Animator>();
         enemyPatrol = GetComponentInParent<EnemyPatrol>();
+        //healthManager = GetComponent<HealthManager>();
     }
 
-    void Start()
-    {
-        myHpManager.ChangeHP(hpMax);
-    }
-
+    
 
     private void Update()
     {
@@ -57,18 +55,31 @@ public class MeleeEnemy : MonoBehaviour
 
     private bool PlayerInSight()
     {
-        RaycastHit2D hit = Physics2D.BoxCast(boxCollider.bounds.center + transform.right * range * transform.localScale.x * colliderDistance,
-            new Vector3(boxCollider.bounds.size.x * range, boxCollider.bounds.size.y, boxCollider.bounds.size.z),
-            0, Vector2.left, 0, playerLayer);
-        
-        return hit.collider !=null;
-    }
+    float directionMultiplier = transform.localScale.x > 0 ? 1f : -1f;
+            Vector2 direction =  Vector2.right * directionMultiplier;
+            hit = Physics2D.BoxCast(transform.position, boxSize, 0f, direction, castDistance, playerLayer);
 
+            if(hit.collider !=null)
+            {
+                Debug.Log("joueur détecté devant" + hit.collider.name);
+
+            }
+            return (hit.collider != null);
+    }
     private void OnDrawGizmos()
     {
-        Gizmos.color = Color.red;
-        Gizmos.DrawWireCube(boxCollider.bounds.center + transform.right * range * transform.localScale.x * colliderDistance,
-            new Vector3(boxCollider.bounds.size.x * range, boxCollider.bounds.size.y, boxCollider.bounds.size.z));
+        float directionMultiplier = transform.localScale.x > 0 ? 1f : -1f;
+        Vector2 direction = Vector2.right * directionMultiplier;
+        Gizmos.color = hit.collider != null ? Color.red : Color.green;
+        Gizmos.DrawWireCube((Vector2)transform.position + (direction * castDistance), boxSize);
+    }
+
+    private void DamagePlayer()
+    {
+        if (PlayerInSight())
+        {
+
+        }
     }
 
 }
