@@ -927,6 +927,7 @@ MonoBehaviour:
   playerLayer:
     serializedVersion: 2
     m_Bits: 64
+  myHpManager: {fileID: 0}
 --- !u!114 &572965130
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2990,7 +2991,7 @@ GameObject:
   - component: {fileID: 1606691654}
   m_Layer: 0
   m_Name: Axe_T1
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -3127,8 +3128,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::sword
   dammage: 3
-  playerSpriteRenderer: {fileID: 0}
   Rb: {fileID: 2119604600}
+  targetTag: 
 --- !u!1001 &1670797120
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -5456,6 +5457,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Sword
       objectReference: {fileID: 0}
+    - target: {fileID: 332207583190464813, guid: 2537a0f9405af7a41b7c2313fe032331, type: 3}
+      propertyPath: m_TagString
+      value: Enemy
+      objectReference: {fileID: 0}
     - target: {fileID: 866228548559160617, guid: 2537a0f9405af7a41b7c2313fe032331, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0.485017
@@ -5495,6 +5500,14 @@ PrefabInstance:
     - target: {fileID: 866228548559160617, guid: 2537a0f9405af7a41b7c2313fe032331, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: -110.71
+      objectReference: {fileID: 0}
+    - target: {fileID: 6210370947727238269, guid: 2537a0f9405af7a41b7c2313fe032331, type: 3}
+      propertyPath: Rb
+      value: 
+      objectReference: {fileID: 2119604600}
+    - target: {fileID: 6210370947727238269, guid: 2537a0f9405af7a41b7c2313fe032331, type: 3}
+      propertyPath: dammage
+      value: 3
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

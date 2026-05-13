@@ -12,13 +12,15 @@ public class sword : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D triger)
     {
-        if (triger.CompareTag("Enemy"))
+        Debug.Log("Collision détecté");
+        if (!triger.CompareTag(gameObject.tag))
         {
-            MeleeEnemy trigerEnemyComponent = triger.gameObject.GetComponent<MeleeEnemy>();
+            Debug.Log("dégât à faire");
+            HealthManager trigerEnemyComponent = triger.gameObject.GetComponent<HealthManager>();
 
             if (trigerEnemyComponent != null)
             {
-                trigerEnemyComponent.myHpManager.Dammage(dammage, DammageType.Sword);
+                trigerEnemyComponent.Dammage(dammage, DammageType.Sword);
             }
         }
     }

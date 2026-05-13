@@ -20,7 +20,7 @@ public class MeleeEnemy : MonoBehaviour
     private float cooldownTimer = Mathf.Infinity;
 
     private Animator anim;
-    //private HealthManager healthManager;
+    public HealthManager myHpManager;
 
 
     private EnemyPatrol enemyPatrol;
@@ -29,7 +29,7 @@ public class MeleeEnemy : MonoBehaviour
     {
         anim = GetComponent<Animator>();
         enemyPatrol = GetComponentInParent<EnemyPatrol>();
-        //healthManager = GetComponent<HealthManager>();
+        myHpManager = GetComponent<HealthManager>();
     }
 
     
