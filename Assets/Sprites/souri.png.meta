@@ -1,10 +1,16 @@
 fileFormatVersion: 2
-guid: da7f4fabba428d64eaafeb3c85de19d8
+guid: 26916d309ec664b4c823c08acb0a49f3
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 2256425537778866161
-    second: checkpoint_classic_0
+      213: 3687468239823560249
+    second: souri_0
+  - first:
+      213: 3574876897722012500
+    second: souri_1
+  - first:
+      213: 1521411634759037136
+    second: souri_2
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -96,40 +102,71 @@ TextureImporter:
     ignorePlatformSupport: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
-  - serializedVersion: 4
-    buildTarget: WebGL
-    maxTextureSize: 2048
-    resizeAlgorithm: 0
-    textureFormat: -1
-    textureCompression: 1
-    compressionQuality: 50
-    crunchedCompression: 0
-    allowsAlphaSplitting: 0
-    overridden: 0
-    ignorePlatformSupport: 0
-    androidETC2FallbackOverride: 0
-    forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: checkpoint_classic_0
+      name: souri_0
       rect:
         serializedVersion: 2
-        x: 713
-        y: 304
-        width: 557
-        height: 914
-      alignment: 9
-      pivot: {x: 0.26391086, y: 0.09583772}
+        x: 2763
+        y: 806
+        width: 599
+        height: 868
+      alignment: 0
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 1f7dd61521f605f10800000000000000
-      internalID: 2256425537778866161
+      spriteID: 93ed73bb3d48c2330800000000000000
+      internalID: 3687468239823560249
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: souri_1
+      rect:
+        serializedVersion: 2
+        x: 3355
+        y: 1316
+        width: 7
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 453987419938c9130800000000000000
+      internalID: 3574876897722012500
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: souri_2
+      rect:
+        serializedVersion: 2
+        x: 3356
+        y: 1258
+        width: 6
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0d075fe22d32d1510800000000000000
+      internalID: 1521411634759037136
       vertices: []
       indices: 
       edges: []
@@ -138,7 +175,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: c763d149b216dcd439a12c22d85ab70b
+    spriteID: 
     internalID: 0
     vertices: []
     indices: 
@@ -148,7 +185,9 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      checkpoint_classic_0: 2256425537778866161
+      souri_0: 3687468239823560249
+      souri_1: 3574876897722012500
+      souri_2: 1521411634759037136
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

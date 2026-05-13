@@ -1,10 +1,19 @@
 fileFormatVersion: 2
-guid: da7f4fabba428d64eaafeb3c85de19d8
+guid: cc10ebb9d89dcc648aa61a0f4d667d57
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 2256425537778866161
-    second: checkpoint_classic_0
+      213: 1787094834037201506
+    second: touche_0
+  - first:
+      213: 3261063535568954215
+    second: touche_1
+  - first:
+      213: 5491263252814752923
+    second: touche_2
+  - first:
+      213: -1468490281393797886
+    second: touche_3
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -96,40 +105,93 @@ TextureImporter:
     ignorePlatformSupport: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
-  - serializedVersion: 4
-    buildTarget: WebGL
-    maxTextureSize: 2048
-    resizeAlgorithm: 0
-    textureFormat: -1
-    textureCompression: 1
-    compressionQuality: 50
-    crunchedCompression: 0
-    allowsAlphaSplitting: 0
-    overridden: 0
-    ignorePlatformSupport: 0
-    androidETC2FallbackOverride: 0
-    forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: checkpoint_classic_0
+      name: touche_0
       rect:
         serializedVersion: 2
-        x: 713
-        y: 304
-        width: 557
-        height: 914
-      alignment: 9
-      pivot: {x: 0.26391086, y: 0.09583772}
+        x: 334
+        y: 643
+        width: 132
+        height: 108
+      alignment: 0
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 1f7dd61521f605f10800000000000000
-      internalID: 2256425537778866161
+      spriteID: 26a19ba78490dc810800000000000000
+      internalID: 1787094834037201506
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: touche_1
+      rect:
+        serializedVersion: 2
+        x: 572
+        y: 631
+        width: 129
+        height: 120
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 763219bf100a14d20800000000000000
+      internalID: 3261063535568954215
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: touche_2
+      rect:
+        serializedVersion: 2
+        x: 1251
+        y: 469
+        width: 1555
+        height: 624
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b9ced20a5d2e43c40800000000000000
+      internalID: 5491263252814752923
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: touche_3
+      rect:
+        serializedVersion: 2
+        x: 178
+        y: 466
+        width: 738
+        height: 139
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 205c8659edfde9be0800000000000000
+      internalID: -1468490281393797886
       vertices: []
       indices: 
       edges: []
@@ -138,7 +200,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: c763d149b216dcd439a12c22d85ab70b
+    spriteID: 
     internalID: 0
     vertices: []
     indices: 
@@ -148,7 +210,10 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      checkpoint_classic_0: 2256425537778866161
+      touche_0: 1787094834037201506
+      touche_1: 3261063535568954215
+      touche_2: 5491263252814752923
+      touche_3: -1468490281393797886
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

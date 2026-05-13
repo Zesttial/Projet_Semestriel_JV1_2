@@ -12,10 +12,8 @@ public class sword : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D triger)
     {
-        Debug.Log("Collision détecté");
         if (!triger.CompareTag(gameObject.tag))
         {
-            Debug.Log("dégât à faire");
             HealthManager trigerEnemyComponent = triger.gameObject.GetComponent<HealthManager>();
 
             if (trigerEnemyComponent != null)
