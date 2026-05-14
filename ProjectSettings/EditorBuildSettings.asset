@@ -8,6 +8,12 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/SampleScene.unity
     guid: 8c9cfa26abfee488c85f1582747f6a02
+  - enabled: 1
+    path: Assets/Scenes/Screnn-Title.unity
+    guid: 29232dab61ef8ac46aef7067638943e4
+  - enabled: 1
+    path: "Assets/Scenes/Cin\xE9matique_test.unity"
+    guid: 2a6dae9ab9c33304e824507aa2564147
   m_configObjects:
     com.unity.input.settings.actions: {fileID: -944628639613478452, guid: 2bcd2660ca9b64942af0de543d8d7100, type: 3}
   m_UseUCBPForAssetBundles: 0

@@ -1403,6 +1403,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::Dammager
   dammage: 2147483647
   type: 0
+  Cooldown: {fileID: 0}
 --- !u!61 &917605661
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -1785,6 +1786,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::Dammager
   dammage: 5
   type: 0
+  Cooldown: {fileID: 2119604605}
 --- !u!1 &1072686388
 GameObject:
   m_ObjectHideFlags: 0
@@ -2080,6 +2082,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::Dammager
   dammage: 5
   type: 0
+  Cooldown: {fileID: 2119604605}
 --- !u!4 &1273228370 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 5518386009922143459, guid: f0a2aa9d5544c684ca3fb4a3fc4c8a02, type: 3}
@@ -2168,6 +2171,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 602140535}
     m_Modifications:
+    - target: {fileID: 247905065415453255, guid: a112eafd519c770459bf351d7b549a4e, type: 3}
+      propertyPath: m_IsTrigger
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 1926436964643122195, guid: a112eafd519c770459bf351d7b549a4e, type: 3}
       propertyPath: m_Name
       value: Lava (1)
@@ -2534,6 +2541,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::Dammager
   dammage: 5
   type: 0
+  Cooldown: {fileID: 2119604605}
 --- !u!1 &1606691648
 GameObject:
   m_ObjectHideFlags: 0
@@ -3495,6 +3503,12 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: -8653719598885068355, guid: 0d333cfe982b9da4993132029c0585da, type: 3}
       insertIndex: -1
       addedObject: {fileID: 2119604603}
+    - targetCorrespondingSourceObject: {fileID: -8653719598885068355, guid: 0d333cfe982b9da4993132029c0585da, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 2119604604}
+    - targetCorrespondingSourceObject: {fileID: -8653719598885068355, guid: 0d333cfe982b9da4993132029c0585da, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 2119604605}
   m_SourcePrefab: {fileID: 4843985084834002234, guid: 0d333cfe982b9da4993132029c0585da, type: 3}
 --- !u!4 &1670797121 stripped
 Transform:
@@ -4552,6 +4566,35 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::move_test
   Vspeed: 10
   jumpforce: 15
+--- !u!114 &2119604604
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2119604592}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 65729f03cbfda5948872a9fea6820922, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::iFrame
+  iFramesDuration: 2
+  numberOfFlashes: 3
+  dammage: 0
+  degat: 0
+--- !u!114 &2119604605
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2119604592}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 371d0393d123c6a4081389be80a32ba0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::cooldown
+  Cooldown: 2
 --- !u!1001 &2146414683
 PrefabInstance:
   m_ObjectHideFlags: 0
