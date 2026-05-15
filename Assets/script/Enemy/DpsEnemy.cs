@@ -1,9 +1,8 @@
 using UnityEngine;
-using UnityEngine.Rendering;
 
-public class MeleeEnemy : MonoBehaviour
+public class DpsEnemy : MonoBehaviour
 {
-    [Header ("Attack Parameters")]
+    [Header("Attack Parameters")]
     [SerializeField] private float attackCooldown;
 
     [Header("Collider Parameters")]
@@ -22,49 +21,37 @@ public class MeleeEnemy : MonoBehaviour
     private Animator anim;
     public HealthManager myHpManager;
 
-
-    private EnemyPatrol enemyPatrol;
-
     private void Awake()
     {
         anim = GetComponent<Animator>();
-        enemyPatrol = GetComponentInParent<EnemyPatrol>();
         myHpManager = GetComponent<HealthManager>();
     }
-
-    
 
     private void Update()
     {
         cooldownTimer += Time.deltaTime;
 
-        if(PlayerInSight())
+        if (PlayerInSight())
         {
             if (cooldownTimer >= attackCooldown)
             {
                 cooldownTimer = 0;
-                anim.SetTrigger("meleeAttack");
+                anim.SetTrigger("DPSAttack");
             }
-        }
-
-        if (enemyPatrol != null)
-        {
-            enemyPatrol.enabled = !PlayerInSight();
         }
     }
-
     private bool PlayerInSight()
     {
-    float directionMultiplier = transform.localScale.x > 0 ? 1f : -1f;
-            Vector2 direction =  Vector2.right * directionMultiplier;
-            hit = Physics2D.BoxCast(transform.position, boxSize, 0f, direction, castDistance, playerLayer);
+        float directionMultiplier = transform.localScale.x > 0 ? 1f : -1f;
+        Vector2 direction = Vector2.right * directionMultiplier;
+        hit = Physics2D.BoxCast(transform.position, boxSize, 0f, direction, castDistance, playerLayer);
 
-            if(hit.collider !=null)
-            {
-                Debug.Log("joueur détecté devant" + hit.collider.name);
+        if (hit.collider != null)
+        {
+            Debug.Log("joueur détecté devant" + hit.collider.name);
 
-            }
-            return (hit.collider != null);
+        }
+        return (hit.collider != null);
     }
     private void OnDrawGizmos()
     {

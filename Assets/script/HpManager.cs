@@ -1,3 +1,4 @@
+using System.Collections;
 using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
@@ -52,6 +53,16 @@ public class HealthManager : MonoBehaviour
     public int GetHP()
     {
         return hp;
+    }
+    public void Immunities(DammageType immuneTo)
+    {
+        StartCoroutine(ImuneCoroutine(immuneTo));
+    }
+    private IEnumerator ImuneCoroutine(DammageType dammageType)
+    {
+        immunities.Add(dammageType);
+        yield return new WaitForSeconds(3);
+        immunities.Remove(dammageType);
     }
 
     public void Dammage(int amount, DammageType type)

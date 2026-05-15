@@ -3913,7 +3913,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dbdc64342d7a4ea4f9b2f569f001e482, type: 3}
   m_Name: 
   m_EditorClassIdentifier: '::'
-  LevelName: SampleScene
+  LevelName: "Cin\xE9matique_test"
 --- !u!1 &1697239132
 GameObject:
   m_ObjectHideFlags: 0
