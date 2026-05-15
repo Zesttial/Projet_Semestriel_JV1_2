@@ -1,4 +1,3 @@
-using NUnit.Framework;
 using System.Collections;
 using UnityEngine;
 
@@ -8,8 +7,7 @@ public class iFrame : MonoBehaviour
     [SerializeField] private float iFramesDuration;
     [SerializeField] private int numberOfFlashes;
     private SpriteRenderer SpriteRend;
-    public DammageType dammage;
-    public bool degat;
+    public Dammager dammage;
 
     private void Awake()
     {
@@ -18,25 +16,24 @@ public class iFrame : MonoBehaviour
 
     public void TakeDamage(float Dammage)
     {
-        if (dammage == DammageType.Spike & degat)
+        if (dammage.type == DammageType.Spike)
             {
-            degat = false;
-           // StartCoroutine(Invulnerability());
-            }         
+            StartCoroutine(Invulnerability());
+            }
+            
     }
 
-    //private IEnumerator Invulnerability()
-    //{
-    //    Physics2D.IgnoreLayerCollision(8, 1);
-    //    for (int i = 0; i < numberOfFlashes; i++)
-    //    {
-    //        SpriteRend.color = new Color(1f, 0f, 0f, 0.5f);
-    //        yield return new WaitForSeconds(1);
-    //        SpriteRend.color = Color.white;
-    //        yield return new WaitForSeconds(1);
+    private IEnumerator Invulnerability()
+    {
+        Physics2D.IgnoreLayerCollision(8, 1);
+        for (int i = 0; i < numberOfFlashes; i++)
+        {
+            SpriteRend.color = new Color (1f, 0f, 0f, 0.5f);
+            yield return new WaitForSeconds(1);
+            SpriteRend.color = Color.white;
+            yield return new WaitForSeconds(1);
 
-    //    }
-    //    degat = true;
+        }
 
-    //}
+    }
 }
