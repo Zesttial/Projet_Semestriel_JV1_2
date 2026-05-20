@@ -40,6 +40,18 @@ TagManager:
   - 
   - 
   m_SortingLayers:
+  - name: Ciel
+    uniqueID: 2315392329
+    locked: 0
+  - name: Montagne
+    uniqueID: 2943632095
+    locked: 0
+  - name: Decors_fond
+    uniqueID: 4005022757
+    locked: 0
+  - name: Premier_Plan
+    uniqueID: 949883153
+    locked: 0
   - name: Default
     uniqueID: 0
     locked: 0

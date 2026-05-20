@@ -9,15 +9,15 @@ public class TihaganPattern : MonoBehaviour
 
     [Header("Références pour les Attaques")]
     public Transform player;
-    public Transform firePoint;
+    //public Transform firePoint;
     public Rigidbody2D rb;
 
-    [Header("Paramètres Projectiles")]
-    public GameObject projectilePrefab;
-    public float projectilesSpeed = 10f;
+    //[Header("Paramètres Projectiles")]
+    //public GameObject projectilePrefab;
+    //public float projectilesSpeed = 10f;
 
-    [Header("Paramètre Onde de Choc (AoE")]
-    public GameObject AoEPrefab;
+    //[Header("Paramètre Onde de Choc (AoE")]
+    //public GameObject AoEPrefab;
 
     [Header("Paramètres Dash")]
     public float dashForce = 25f;
@@ -27,29 +27,32 @@ public class TihaganPattern : MonoBehaviour
     public GameObject espadonHitbox;
     public float swordActiveTime = 0.3f;
 
-
+    public Animator anim;
 
     private void Start()
     {
         StartCoroutine(AttackLoop());
+        anim = GetComponent<Animator>();
     }
 
     IEnumerator AttackLoop()
     {
-        yield return new WaitForSeconds(2f);
+        yield return new WaitForSeconds(timeBetweenAttacks);
 
         while (true)
         {
             if (!isAttacking)
             {
                 isAttacking = true;
-                int randomPattern = Random.Range(1, 4);
+                int randomPattern = Random.Range(1, 3);
+                //if (randomPattern == 1)
+                //    SpawProjectileEvent();
+                //else if (randomPattern == 2)
+                //    ExecuteAoE();
                 if (randomPattern == 1)
-                    ExecuteProjectile();
-                else if (randomPattern == 2)
-                    ExecuteAoE();
-                else if (randomPattern == 3)
                     ExecuteDash();
+                else if (randomPattern == 2)
+                    ExecuteEspadonAttack();
                 yield return new WaitForSeconds(timeBetweenAttacks);
                 isAttacking = false;
             }
@@ -57,39 +60,12 @@ public class TihaganPattern : MonoBehaviour
         }
 
     }
-    void ExecuteProjectile()
-    {
-        if (player == null || firePoint == null || projectilePrefab == null)
-            return;
 
-        Debug.Log("BOSS PATTERN 1 : Rafale de 3 projectiles vers le joueur !");
-
-        GameObject bullet = Instantiate(projectilePrefab, firePoint.position, transform.rotation);
-
-        Vector3 direction = (player.position - firePoint.position).normalized;
-
-        Rigidbody2D bulletRb = bullet.GetComponent<Rigidbody2D>();
-
-        if (bulletRb != null)
-        {
-            bulletRb.linearVelocity = direction * projectilesSpeed;
-        }
-    }
-
-    void ExecuteAoE()
-    {
-        if (AoEPrefab == null)
-            return;
-
-        Debug.Log("BOSS PATTERN 3 : Hurlement Pluie de Débris");
-
-        Vector3 spawnPosition = new Vector3(transform.position.x, transform.position.y, transform.position.z);
-
-        GameObject wave = Instantiate(AoEPrefab, spawnPosition, transform.rotation);
-    }
 
     void ExecuteDash()
     {
+        anim.SetTrigger("Dash");
+
         if (player == null || rb == null)
             return;
 
@@ -109,11 +85,12 @@ public class TihaganPattern : MonoBehaviour
 
         rb.linearVelocity = Vector3.zero;
 
-        ExecuteEspadonAttack();
     }
 
     void ExecuteEspadonAttack()
     {
+        anim.SetTrigger("attack");
+
         if (espadonHitbox == null)
             return;
 
