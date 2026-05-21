@@ -4,6 +4,7 @@ using UnityEngine;
 public class HpModifier : MonoBehaviour
 {
     protected HealthManager healthManager;
+    public int hp;
 
     void Start()
     {
@@ -18,7 +19,8 @@ public class HpModifier : MonoBehaviour
 
     public virtual void OnDie()
     {
-
+        Debug.Log("mort");
+        healthManager.MaxHp();
     }
 
 }
