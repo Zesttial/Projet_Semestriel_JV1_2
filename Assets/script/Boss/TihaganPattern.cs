@@ -81,6 +81,8 @@ public class TihaganPattern : MonoBehaviour
 
         rb.linearVelocity = dashDirection * dashForce;
 
+
+        print(rb.linearVelocity);
         yield return new WaitForSeconds(dashDuration);
 
         rb.linearVelocity = Vector3.zero;
