@@ -11,7 +11,7 @@ public class HM_BackToRespawn : HpModifier
     {
         transform.position = lastRespawn.transform.position;
         myHpManager.ChangeHP(hpMax);
-        string sceneActuelle = SceneManager.GetActiveScene().name;
-        SceneManager.LoadScene(sceneActuelle);
+        //string sceneActuelle = SceneManager.GetActiveScene().name;
+        //SceneManager.LoadScene(sceneActuelle);
     }
 }
